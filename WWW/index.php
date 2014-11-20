@@ -1,21 +1,10 @@
 <?php require_once('includes/database.php');
     
-    //Acá el tipo Bar, sería reemplazado por el id del objeto seleccionado
-/*
-    $query = "SELECT * FROM lugares WHERE tipo='Bar'";
-    $resultado = mysql_query($query) OR die("<p class='error'>Error de query: ".mysql_error()."</p></p>");
-                    
-    while ( $row = mysql_fetch_array($resultado)){
-        $valores[] = $row;
-    }
-
-    */
-            
 ?>
 
 <!DOCTYPE html>
 
-  <html class="no-js"> <!--<![endif]-->
+  <html class="no-js"> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -35,32 +24,45 @@
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
+        <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
         
 
 
     </head>
     <body>
         
-
         <div class="cabecera" class="col-xs-12">
            
-        </div>
-
         <div class="main-container">
             
             <section class="menu">            
                 <div id="laImagen">
-                    <img  id= "birra" class="icono" src="img/bar.png"/>
-                    <img  id= "comida" class="icono" src="img/comer.png"/>
-                    <img  id= "cine" class="icono" src="img/cine.png"/>
-                    <img  id= "tienda" class="icono" src="img/teatro.png"/>
+                    <img  id= "birra" class="icono" src="img/bar.png"  draggable="true" ondragstart="drag(event)"/>
+                    <img  id= "comida" class="icono" src="img/comer.png" draggable="true" ondragstart="drag(event)"/>
+                    <img  id= "cine" class="icono" src="img/cine.png" draggable="true" ondragstart="drag(event)"/>
+                    <img  id= "tienda" class="icono" src="img/teatro.png" draggable="true" ondragstart="drag(event)"/>
                 </div>
 
                 
             </section>
             <section class="divMapa"> 
                  <div id="map-canvas"></div>
-                <canvas id="lienzo" width="162" height="254">
+                <canvas id="lienzo" width="162" height="254" ondrop="drop(event)" ondragover="allowDrop(event)">
                    
                 </canvas>
 
@@ -92,23 +94,6 @@
               };
                 var map = new google.maps.Map(document.getElementById('map-canvas'),
                   mapOptions);
-           /*
-           En este bloque de codigo debería agregar los marcadores buscados en la base de datos (este iría ubicado en el drop),
-           sin embargo presenta un error y no me deja visualizar el mapa.
-           El error es: "Uncaught SyntaxError: Unexpected identifier" 
-            <?php 
-                foreach ($valores as $marker) {
-            ?>
-            var posmarker = new google.maps.LatLng(<?php echo $marker ['latitud'];?>,<?php echo $marker ['longitud'];?>);
-            var marker_<?php echo $marker ['id'];?> = new google.maps.Marker({
-                  position: posmarker,
-                  map: map,
-                  title: <?php echo $marker ['nombre'];?>
-                });
-            <?php 
-                }
-            ?>  
-            */
            
             }
             google.maps.event.addDomListener(window, 'load', initialize);
