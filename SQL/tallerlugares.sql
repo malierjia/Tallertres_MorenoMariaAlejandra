@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-11-2014 a las 05:58:38
+-- Tiempo de generación: 25-11-2014 a las 07:52:42
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `lugares` (
 --
 
 INSERT INTO `lugares` (`id`, `tipo`, `nombre`, `lat`, `long`, `direccion`) VALUES
-(1, 'bar', 'El faro', 3.397921782024203, -76.53960158491135, 'Calle 66 # 11-18'),
-(2, 'comida', 'Il forno', 3.421809764340208, -76.54245877777102, 'Roosevelt # 39-2 a 39-100'),
-(3, 'cine', 'Cinepolis', 3.394475907734571, -76.544165688715, 'Autosur # 68-1 a 68-99'),
-(4, 'teatro', 'Los cristales', 3.444635336799733, -76.54674619136811, 'Carrera 15 # 7O-1 a 7O-99');
+(1, 'bar', 'El faro', 3.3978839, -76.5396275, 'Calle 66 # 11-18'),
+(2, 'comida', 'Il forno', 3.4215497, -76.542397, 'Roosevelt # 39-2 a 39-100'),
+(3, 'cine', 'Cinepolis', 3.394453, -76.544488, 'Autosur # 68-1 a 68-99'),
+(4, 'teatro', 'Los cristales', 3.4446208, -76.5466366, 'Carrera 15 # 7O-1 a 7O-99');
 
 --
 -- Índices para tablas volcadas
