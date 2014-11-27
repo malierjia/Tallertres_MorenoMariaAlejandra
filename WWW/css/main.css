@@ -5,60 +5,72 @@ body {
     background-color: black;
 }
 
-#elFooter{
-    text-align: center;
-}
+
+    
 #map-canvas {
     
-    width:600px;
-    height:350px;
+    width:550px;
+    height:380px;
     margin-left: 10%;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 20px;
     padding: 0px;
     display: inline-block;
-    background-image: url('../img/arrastra.png');
+   background-color: gray;
     
     
  }
+
+
+ #cuadrado {
+    border:1px dotted yellow;
+   
+    margin-left: 2%;
+     margin-top: 5px;
+       margin-bottom: 20px;
+
+    
+}
+
+
+#menu{
+    padding-top: 5px;
+}
+
  .icono{
     margin-left: 8%;
  }
- .title{
-    font-family: 'lobster Two', 'Regular';
-    margin-left: 40%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-align: center;
- }
+ 
  .cabecera{
     background-image: url('../img/bannerNombre.png');
-    height:400px;
+    height:350px;
     width:100%;
+        background-repeat: no-repeat;
  }
-#lienzo{
-    background-image: url('../img/arrastra.png');
-    float: left;
-    margin-top: 8%;
-    margin-left:20%;
 
-}
 .divMapa{
     background-color: black;
     margin-top: 20px;
 
 }
-.menu{
 
-    background-color: black;
-}
 #laImagen{
     display: inline-block;
     width: 100%;
     margin-top: 20px;
     margin-left: 20%;
 }
-.footer-container, #elFooter{
+.footer-container{
     
     background-color: black;
+    text-align: center;
 }
+
+
+
+
+       
+
+p{color:#ffde00;
+
+ margin-left: 2%;}
